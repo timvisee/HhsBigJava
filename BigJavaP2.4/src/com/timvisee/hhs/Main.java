@@ -7,6 +7,8 @@
 
 package com.timvisee.hhs;
 
+import java.util.Scanner;
+
 /**
  * Main class.
  */
@@ -18,6 +20,17 @@ public class Main {
      * @param args Start arguments.
      */
     public static void main(String[] args) {
+        // Create a scanner instance for user input
+        Scanner in = new Scanner(System.in);
 
+        // Ask the user for input
+        int a = in.nextInt();
+        int b = in.nextInt();
+
+        // Calculate and print the sum
+        System.out.println("Sum: " + (a + b));
+
+        // Calculate and print the difference
+        System.out.println("Absolute difference: " + Math.abs(a - b));
     }
 }
