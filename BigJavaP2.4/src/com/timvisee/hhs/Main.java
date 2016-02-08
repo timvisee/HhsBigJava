@@ -3,6 +3,9 @@
  * Write a program that prompts the user for two integers and then prints
  * A. The sum.
  * B. The difference.
+ *
+ * @author Tim Visee
+ * @website www.timvisee.com
  */
 
 package com.timvisee.hhs;

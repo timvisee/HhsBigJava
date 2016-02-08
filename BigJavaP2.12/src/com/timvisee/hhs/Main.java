@@ -4,6 +4,9 @@
  * the path (\Windows\System), the file name (Readme), and the extension (txt). Then print the complete file name
  * C:\Windows\System\Readme.txt. (If you use UNIX or a Macintosh, skip the drive name and use / instead of \ to separate
  * directories.)
+ *
+ * @author Tim Visee
+ * @website www.timvisee.com
  */
 
 package com.timvisee.hhs;

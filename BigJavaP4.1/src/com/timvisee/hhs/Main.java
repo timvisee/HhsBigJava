@@ -6,6 +6,9 @@
  * c. All powers of 2 from 20 up to 220.
  * d. The sum of all odd numbers between a and b (inclusive), where a and b are inputs.
  * e. The sum of all odd digits of an input. (For example, if the input is 32677, the sum would be 3 + 7 + 7 = 17.)
+ *
+ * @author Tim Visee
+ * @website www.timvisee.com
  */
 
 package com.timvisee.hhs;

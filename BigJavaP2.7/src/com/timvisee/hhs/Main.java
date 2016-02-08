@@ -3,6 +3,9 @@
  * Write a program that prompts the user for a radius and then prints:
  * A. The area and circumference of a circle with that radius.
  * B. The volume and surface area of a sphere with that radius.
+ *
+ * @author Tim Visee
+ * @website www.timvisee.com
  */
 
 package com.timvisee.hhs;
