@@ -9,7 +9,16 @@
 package com.timvisee.hhs;
 
 /**
- * Created by Tim on 8-2-2016.
+ * Main class.
  */
 public class Main {
+
+    /**
+     * Main method, called on start.
+     *
+     * @param args Start arguments.
+     */
+    public static void main(String[] args) {
+
+    }
 }
