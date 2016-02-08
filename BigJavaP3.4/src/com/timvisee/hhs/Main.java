@@ -10,8 +10,16 @@ package com.timvisee.hhs;
 
 import java.util.Scanner;
 
+/**
+ * Main class.
+ */
 public class Main {
 
+    /**
+     * Main method, on start.
+     *
+     * @param args Start arguments.
+     */
     public static void main(String[] args) {
         // Create a scanner instance, and an array for the three numbers
         Scanner in = new Scanner(System.in);
