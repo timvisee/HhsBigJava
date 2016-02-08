@@ -35,5 +35,11 @@ public class Main {
         for(int i = 1; i <= 100; i++)
             sum += Math.sqrt((double) i);
         System.out.println("B: " + sum);
+
+        // Complete the sum of all even numbers from 2 to 100
+        sum = 0;
+        for(int i = 20; i <= 220; i++)
+            sum += Math.pow(i, 2);
+        System.out.println("C: " + (int) sum);
     }
 }
