@@ -22,12 +22,18 @@ public class Main {
      */
     public static void main(String[] args) {
         // Define the sum variable
-        int sum = 0;
+        double sum = 0;
 
         // Complete the sum of all even numbers from 2 to 100
         sum = 0;
         for(int i = 2; i <= 100; i += 2)
             sum += i;
-        System.out.println("A: " + sum);
+        System.out.println("A: " + ((int) sum));
+
+        // Complete the sum of all even numbers from 2 to 100
+        sum = 0;
+        for(int i = 1; i <= 100; i++)
+            sum += Math.sqrt((double) i);
+        System.out.println("B: " + sum);
     }
 }
