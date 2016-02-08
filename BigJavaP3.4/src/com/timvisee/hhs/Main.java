@@ -1,3 +1,11 @@
+/**
+ * Challenge P3.4 from BigJava:
+ * Write a program that reads three numbers and prints “all the same” if they are all the same, “all different” if they are all different, and “neither” otherwise.
+ *
+ * @author Tim Visée
+ * @website www.timvisee.com
+ */
+
 package com.timvisee.hhs;
 
 import java.util.Scanner;
