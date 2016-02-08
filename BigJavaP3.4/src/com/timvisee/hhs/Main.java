@@ -1,5 +1,5 @@
 /**
- * Challenge P3.4 from BigJava:
+ * BigJava P3.4 challenge:
  * Write a program that reads three numbers and prints “all the same” if they are all the same, “all different” if they are all different, and “neither” otherwise.
  *
  * @author Tim Visée
