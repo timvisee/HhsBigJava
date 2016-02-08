@@ -24,6 +24,7 @@ public class Main {
         Scanner in = new Scanner(System.in);
 
         // Ask the user for a radius value
+        System.out.println("Enter a radius value:");
         double radius = in.nextDouble();
 
         // Calculate the area, circumference and volume
