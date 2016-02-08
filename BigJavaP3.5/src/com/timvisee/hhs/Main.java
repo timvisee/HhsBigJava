@@ -8,6 +8,8 @@
 
 package com.timvisee.hhs;
 
+import java.util.Scanner;
+
 /**
  * Main class.
  */
@@ -19,6 +21,15 @@ public class Main {
      * @param args Start arguments.
      */
     public static void main(String[] args) {
+        // Create a scanner instance, and an array for the three numbers
+        Scanner in = new Scanner(System.in);
+        int[] nums = new int[3];
 
+        // Ask the user for three number
+        System.out.println("Please enter three numbers:");
+
+        // Gather the input
+        for(int i = 0; i < 3; i++)
+            nums[i] = in.nextInt();
     }
 }
