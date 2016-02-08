@@ -1,6 +1,6 @@
 /**
  * BigJava P4.1 challenge:
- * Write programs with loops that compute
+ * Write programs with loops that compute:
  * a. The sum of all even numbers between 2 and 100 (inclusive).
  * b. The sum of all squares between 1 and 100 (inclusive).
  * c. All powers of 2 from 20 up to 220.
@@ -21,6 +21,13 @@ public class Main {
      * @param args Start arguments.
      */
     public static void main(String[] args) {
+        // Define the sum variable
+        int sum = 0;
 
+        // Complete the sum of all even numbers from 2 to 100
+        sum = 0;
+        for(int i = 2; i <= 100; i += 2)
+            sum += i;
+        System.out.println("A: " + sum);
     }
 }
