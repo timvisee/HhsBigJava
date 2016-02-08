@@ -30,7 +30,7 @@ public class Main {
         sum = 0;
         for(int i = 2; i <= 100; i += 2)
             sum += i;
-        System.out.println("A: " + ((int) sum));
+        System.out.println("A: " + (int) sum);
 
         // Complete the sum of all even numbers from 2 to 100
         sum = 0;
@@ -63,5 +63,28 @@ public class Main {
             if(i % 2 == 1)
                 sum += i;
         System.out.println("D: " + (int) sum);
+
+        // Ask the user for an input value, and convert it to a string afterwards
+        int val = in.nextInt();
+        String valStr = String.valueOf(val);
+
+        // Handle each digit in the value separately
+        sum = 0;
+        for(int i = 0; i < valStr.length(); i++) {
+            // Get the character at this position
+            char c = valStr.charAt(i);
+
+            // Skip the minus sign
+            if(c == '-')
+                continue;
+
+            // Determine the number
+            int n = Character.getNumericValue(c);
+
+            // Determine whether the number is odd, if it is add it to the sum
+            if(n % 2 == 1)
+                sum += n;
+        }
+        System.out.println("E: " + (int) sum);
     }
 }
