@@ -10,6 +10,8 @@
 
 package com.timvisee.hhs;
 
+import java.util.Scanner;
+
 /**
  * Main class.
  */
@@ -41,5 +43,25 @@ public class Main {
         for(int i = 20; i <= 220; i++)
             sum += Math.pow(i, 2);
         System.out.println("C: " + (int) sum);
+
+        // Create a scanner instance to gather input
+        Scanner in = new Scanner(System.in);
+
+        // Ask the user for two inputs
+        System.out.println("Please enter two inputs");
+        int a = in.nextInt();
+        int b = in.nextInt();
+
+        // Determine the minimum and maximum number
+        int min = Math.min(a, b);
+        int max = Math.max(a, b);
+
+        // Loop through all numbers
+        sum = 0;
+        for(int i = min; i <= max; i++)
+            // Make sure the number is odd
+            if(i % 2 == 1)
+                sum += i;
+        System.out.println("D: " + (int) sum);
     }
 }
