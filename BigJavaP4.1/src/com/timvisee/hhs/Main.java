@@ -60,7 +60,7 @@ public class Main {
         sum = 0;
         for(int i = min; i <= max; i++)
             // Make sure the number is odd
-            if(i % 2 == 1)
+            if(!isEven(i))
                 sum += i;
         System.out.println("D: " + (int) sum);
 
@@ -82,9 +82,20 @@ public class Main {
             int n = Character.getNumericValue(c);
 
             // Determine whether the number is odd, if it is add it to the sum
-            if(n % 2 == 1)
+            if(!isEven(n))
                 sum += n;
         }
         System.out.println("E: " + (int) sum);
+    }
+
+    /**
+     * Check whether a number is even.
+     *
+     * @param i The number to check.
+     *
+     * @return True if even, false if not.
+     */
+    public static boolean isEven(int i) {
+        return i % 2 == 0;
     }
 }
