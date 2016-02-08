@@ -31,5 +31,15 @@ public class Main {
         // Gather the input
         for(int i = 0; i < 3; i++)
             nums[i] = in.nextInt();
+
+        // Compare the numbers
+        if(nums[0] < nums[1] && nums[1] < nums[2])
+            System.out.println("increasing");
+
+        else if(nums[0] > nums[1] && nums[1] > nums[2])
+            System.out.println("decreasing");
+
+        else
+            System.out.println("neither");
     }
 }
