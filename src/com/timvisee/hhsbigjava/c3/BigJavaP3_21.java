@@ -33,36 +33,38 @@ public class BigJavaP3_21 {
         Scanner in = new Scanner(System.in);
 
         // Ask the user for a price
-        System.out.println("Enter a price:");
+        System.out.println("Enter your annual income:");
         double price = in.nextDouble();
 
-        // Calculate the tax
-        if(price <= 50000)
-            printTax(price, 0.01);
+        // Define an array of taxes
+        double taxes[][] = {
+                {50000.0, 0.01},
+                {75000.0, 0.02},
+                {100000.0, 0.03},
+                {250000.0, 0.04},
+                {500000.0, 0.05},
+                {-1.0, 0.06},
+        };
 
-        else if(price <= 75000)
-            printTax(price, 0.02);
+        // Define a variable to put the tax in
+        double tax = 0.0;
 
-        else if(price <= 100000)
-            printTax(price, 0.03);
+        // Loop through all the taxes
+        for(int i = 0; i < taxes.length; i++) {
+            // Add the tax to the sum
+            if(taxes[i][0] != -1.0)
+                tax += Math.min(price, taxes[i][0]) * taxes[i][1];
+            else
+                tax += taxes[i][0] * taxes[i][1];
 
-        else if(price <= 250000)
-            printTax(price, 0.04);
+            // Decrease the current price
+            price -= taxes[i][0];
 
-        else if(price <= 500000)
-            printTax(price, 0.05);
+            // Make sure the price doesn't go out of bound
+            if(price <= 0)
+                break;
+        }
 
-        else
-            printTax(price, 0.06);
-    }
-
-    /**
-     * Print the tax based on a price and factor.
-     *
-     * @param price The price.
-     * @param factor The factor.
-     */
-    public static void printTax(double price, double factor) {
-            System.out.println("Income tax: " + (price * factor));
+        System.out.println("Income tax: " + tax);
     }
 }
