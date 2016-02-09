@@ -62,7 +62,7 @@ public class BigJavaP3_21 {
         // Loop through all the taxes
         for(double[] T : TAX_CONFIG) {
             // Calculate and add the tax with the proper factor, max the price to the max_price value or ignore it for -1
-            tax += (T[0] != -1.0 ? Math.min(income, T[0]) : T[0]) * T[1];
+            tax += (T[0] != -1.0 ? Math.min(income, T[0]) : income) * T[1];
 
             // Subtract the processed income from the total, and make sure the price doesn't go out of bound
             if((income -= T[0]) <= 0)
