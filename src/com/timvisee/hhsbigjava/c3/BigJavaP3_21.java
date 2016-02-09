@@ -46,12 +46,9 @@ public class BigJavaP3_21 {
         // Create a scanner instance for user input
         Scanner in = new Scanner(System.in);
 
-        // Ask the user for a price
+        // Ask the user for a price and calculate and print the tax afterwards
         System.out.println("Enter your annual income:");
-        double price = in.nextDouble();
-
-        // Calculate and print the tax
-        System.out.println("Income tax: " + calculateTax(price));
+        System.out.println("Income tax: " + calculateTax(in.nextDouble()));
     }
 
     /**
@@ -62,11 +59,11 @@ public class BigJavaP3_21 {
      * @return The tax over this income.
      */
     private static double calculateTax(double income) {
-        // Define a variable to put the tax in
+        // Define a variable to store the total tax
         double tax = 0.0;
 
         // Loop through all the taxes
-        for (double[] T : TAX_CONFIG) {
+        for(double[] T : TAX_CONFIG) {
             // Calculate and add the tax with the proper factor, max the price to the max_price value or ignore it for -1
             tax += (T[0] != -1.0 ? Math.min(income, T[0]) : T[0]) * T[1];
 
