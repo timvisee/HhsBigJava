@@ -50,6 +50,18 @@ public class BigJavaP3_21 {
         System.out.println("Enter your annual income:");
         double price = in.nextDouble();
 
+        // Calculate and print the tax
+        System.out.println("Income tax: " + calculateTax(price));
+    }
+
+    /**
+     * Calculate the tax for the specified annual income.
+     *
+     * @param income The annual income.
+     *
+     * @return The tax over this income.
+     */
+    private static double calculateTax(double income) {
         // Define a variable to put the tax in
         double tax = 0.0;
 
@@ -57,18 +69,18 @@ public class BigJavaP3_21 {
         for(int i = 0; i < TAX_CONFIG.length; i++) {
             // Add the tax to the sum
             if(TAX_CONFIG[i][0] != -1.0)
-                tax += Math.min(price, TAX_CONFIG[i][0]) * TAX_CONFIG[i][1];
+                tax += Math.min(income, TAX_CONFIG[i][0]) * TAX_CONFIG[i][1];
             else
                 tax += TAX_CONFIG[i][0] * TAX_CONFIG[i][1];
 
             // Decrease the current price
-            price -= TAX_CONFIG[i][0];
+            income -= TAX_CONFIG[i][0];
 
             // Make sure the price doesn't go out of bound
-            if(price <= 0)
+            if(income <= 0)
                 break;
         }
 
-        System.out.println("Income tax: " + tax);
+        return tax;
     }
 }
