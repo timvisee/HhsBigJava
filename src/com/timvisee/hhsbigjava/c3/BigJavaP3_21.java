@@ -24,6 +24,20 @@ import java.util.Scanner;
 public class BigJavaP3_21 {
 
     /**
+     * Tax configuration. This configuration specifies the tax over each amount of money.
+     * These taxes are specified in [max_price, tax_factor] format.
+     * If the max_price value is set to -1, it's maximum price is ignored.
+     */
+    public static final double TAX_CONFIG[][] = {
+            {50000.0, 0.01},
+            {75000.0, 0.02},
+            {100000.0, 0.03},
+            {250000.0, 0.04},
+            {500000.0, 0.05},
+            {-1.0, 0.06},
+    };
+
+    /**
      * Main method, called on start.
      *
      * @param args Start arguments.
@@ -36,29 +50,19 @@ public class BigJavaP3_21 {
         System.out.println("Enter your annual income:");
         double price = in.nextDouble();
 
-        // Define an array of taxes
-        double taxes[][] = {
-                {50000.0, 0.01},
-                {75000.0, 0.02},
-                {100000.0, 0.03},
-                {250000.0, 0.04},
-                {500000.0, 0.05},
-                {-1.0, 0.06},
-        };
-
         // Define a variable to put the tax in
         double tax = 0.0;
 
         // Loop through all the taxes
-        for(int i = 0; i < taxes.length; i++) {
+        for(int i = 0; i < TAX_CONFIG.length; i++) {
             // Add the tax to the sum
-            if(taxes[i][0] != -1.0)
-                tax += Math.min(price, taxes[i][0]) * taxes[i][1];
+            if(TAX_CONFIG[i][0] != -1.0)
+                tax += Math.min(price, TAX_CONFIG[i][0]) * TAX_CONFIG[i][1];
             else
-                tax += taxes[i][0] * taxes[i][1];
+                tax += TAX_CONFIG[i][0] * TAX_CONFIG[i][1];
 
             // Decrease the current price
-            price -= taxes[i][0];
+            price -= TAX_CONFIG[i][0];
 
             // Make sure the price doesn't go out of bound
             if(price <= 0)
