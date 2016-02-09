@@ -13,7 +13,7 @@
  * @website www.timvisee.com
  */
 
-package com.timvisee.hhsbigjava.p3_32;
+package com.timvisee.hhsbigjava.c3;
 
 import java.util.Scanner;
 
