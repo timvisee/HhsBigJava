@@ -13,14 +13,14 @@
  * @website www.timvisee.com
  */
 
-package com.timvisee.hhs;
+package com.timvisee.hhsbigjava.p3_32;
 
 import java.util.Scanner;
 
 /**
  * Main class.
  */
-public class Main {
+public class BigJavaP3_32 {
 
     /**
      * Pin number.
