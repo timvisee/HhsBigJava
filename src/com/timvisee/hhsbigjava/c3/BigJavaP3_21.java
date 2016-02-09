@@ -29,12 +29,12 @@ public class BigJavaP3_21 {
      * If the max_price value is set to -1, it's maximum price is ignored.
      */
     public static final double TAX_CONFIG[][] = {
-            {50000.0, 0.01},
-            {75000.0, 0.02},
+            {50000.0,  0.01},
+            {75000.0,  0.02},
             {100000.0, 0.03},
             {250000.0, 0.04},
             {500000.0, 0.05},
-            {-1.0, 0.06},
+            {-1.0,     0.06},
     };
 
     /**
@@ -43,12 +43,9 @@ public class BigJavaP3_21 {
      * @param args Start arguments.
      */
     public static void main(String[] args) {
-        // Create a scanner instance for user input
-        Scanner in = new Scanner(System.in);
-
-        // Ask the user for a price and calculate and print the tax afterwards
+        // Ask the user for a price, create a scanner for user input, gather input and calculate and print the tax afterwards
         System.out.println("Enter your annual income:");
-        System.out.println("Income tax: " + calculateTax(in.nextDouble()));
+        System.out.println("Income tax: " + calculateTax((new Scanner(System.in)).nextDouble()));
     }
 
     /**
@@ -71,7 +68,6 @@ public class BigJavaP3_21 {
             if((income -= T[0]) <= 0)
                 break;
         }
-
         return tax;
     }
 }
