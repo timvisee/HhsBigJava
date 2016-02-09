@@ -9,7 +9,7 @@
  * @website www.timvisee.com
  */
 
-package com.timvisee.hhs;
+package com.timvisee.hhsbigjava.p2_12;
 
 import java.io.File;
 import java.util.Scanner;
@@ -17,7 +17,7 @@ import java.util.Scanner;
 /**
  * Main class.
  */
-public class Main {
+public class BigJavaP2_12 {
 
     /**
      * Main method, called on start.
