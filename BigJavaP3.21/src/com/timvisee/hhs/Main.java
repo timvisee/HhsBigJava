@@ -38,21 +38,31 @@ public class Main {
 
         // Calculate the tax
         if(price <= 50000)
-            System.out.println("Income tax: " + (price * 0.01));
+            printTax(price, 0.01);
 
         else if(price <= 75000)
-            System.out.println("Income tax: " + (price * 0.02));
+            printTax(price, 0.02);
 
         else if(price <= 100000)
-            System.out.println("Income tax: " + (price * 0.03));
+            printTax(price, 0.03);
 
         else if(price <= 250000)
-            System.out.println("Income tax: " + (price * 0.04));
+            printTax(price, 0.04);
 
         else if(price <= 500000)
-            System.out.println("Income tax: " + (price * 0.05));
+            printTax(price, 0.05);
 
         else
-            System.out.println("Income tax: " + (price * 0.06));
+            printTax(price, 0.06);
+    }
+
+    /**
+     * Print the tax based on a price and factor.
+     *
+     * @param price The price.
+     * @param factor The factor.
+     */
+    public static void printTax(double price, double factor) {
+            System.out.println("Income tax: " + (price * factor));
     }
 }
