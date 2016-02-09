@@ -8,7 +8,7 @@
  * @website www.timvisee.com
  */
 
-package com.timvisee.hhsbigjava.p2_7;
+package com.timvisee.hhsbigjava.c2;
 
 import java.util.Scanner;
 
