@@ -11,7 +11,7 @@
  * @website www.timvisee.com
  */
 
-package com.timvisee.hhsbigjava.p4_1;
+package com.timvisee.hhsbigjava.c4;
 
 import java.util.Scanner;
 
