@@ -66,15 +66,12 @@ public class BigJavaP3_21 {
         double tax = 0.0;
 
         // Loop through all the taxes
-        for(int i = 0; i < TAX_CONFIG.length; i++) {
+        for (double[] T : TAX_CONFIG) {
             // Calculate and add the tax with the proper factor, max the price to the max_price value or ignore it for -1
-            tax += (TAX_CONFIG[i][0] != -1.0 ? Math.min(income, TAX_CONFIG[i][0]) : TAX_CONFIG[i][0]) * TAX_CONFIG[i][1];
+            tax += (T[0] != -1.0 ? Math.min(income, T[0]) : T[0]) * T[1];
 
-            // Decrease the current price
-            income -= TAX_CONFIG[i][0];
-
-            // Make sure the price doesn't go out of bound
-            if(income <= 0)
+            // Subtract the processed income from the total, and make sure the price doesn't go out of bound
+            if((income -= T[0]) <= 0)
                 break;
         }
 
