@@ -7,14 +7,14 @@
  * @website www.timvisee.com
  */
 
-package com.timvisee.hhs;
+package com.timvisee.hhsbigjava.p3_4;
 
 import java.util.Scanner;
 
 /**
  * Main class.
  */
-public class Main {
+public class BigJavaP3_4 {
 
     /**
      * Main method, on start.
