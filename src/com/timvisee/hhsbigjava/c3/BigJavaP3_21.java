@@ -67,11 +67,8 @@ public class BigJavaP3_21 {
 
         // Loop through all the taxes
         for(int i = 0; i < TAX_CONFIG.length; i++) {
-            // Add the tax to the sum
-            if(TAX_CONFIG[i][0] != -1.0)
-                tax += Math.min(income, TAX_CONFIG[i][0]) * TAX_CONFIG[i][1];
-            else
-                tax += TAX_CONFIG[i][0] * TAX_CONFIG[i][1];
+            // Calculate and add the tax with the proper factor, max the price to the max_price value or ignore it for -1
+            tax += (TAX_CONFIG[i][0] != -1.0 ? Math.min(income, TAX_CONFIG[i][0]) : TAX_CONFIG[i][0]) * TAX_CONFIG[i][1];
 
             // Decrease the current price
             income -= TAX_CONFIG[i][0];
