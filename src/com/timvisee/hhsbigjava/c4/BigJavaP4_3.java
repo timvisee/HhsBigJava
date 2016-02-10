@@ -49,21 +49,27 @@ public class BigJavaP4_3 {
             System.out.println("Second character in string: " + input.charAt(1));
 
         // Copy the string and replace all the vowels with an underscore
-        System.out.println("Without vowels: " + input.replaceAll("[aeiou]", "\\_"));
+        String inputVowels = input.replaceAll("[aeiou]", "\\_");
+        System.out.println("Without vowels: " + inputVowels);
 
         // The number of vowels in the string
-        System.out.println("Number of vowels: " + countOccurencesRegex(input, Pattern.compile("[aeiou]")));
+        System.out.println("Number of vowels: " + countOccurrencesRegex(input, Pattern.compile("[aeiou]")));
+
+        // Determine the position of all vowels in the string
+        for(int i = 0; i < input.length(); i++) {
+            //
+        }
     }
 
     /**
-     * Count the number of occurences by regex in a string.
+     * Count the number of occurrences by regex in a string.
      *
      * @param input The input string.
      * @param pattern The regex pattern.
      *
-     * @return The number of occurences.
+     * @return The number of occurrences.
      */
-    public static int countOccurencesRegex(String input, Pattern pattern) {
+    public static int countOccurrencesRegex(String input, Pattern pattern) {
         // Create a matcher
         Matcher matcher = pattern.matcher(input);
 
