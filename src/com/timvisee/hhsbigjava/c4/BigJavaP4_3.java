@@ -14,6 +14,8 @@
 package com.timvisee.hhsbigjava.c4;
 
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Main class.
@@ -48,5 +50,29 @@ public class BigJavaP4_3 {
 
         // Copy the string and replace all the vowels with an underscore
         System.out.println("Without vowels: " + input.replaceAll("[aeiou]", "\\_"));
+
+        // The number of vowels in the string
+        System.out.println("Number of vowels: " + countOccurencesRegex(input, Pattern.compile("[aeiou]")));
+    }
+
+    /**
+     * Count the number of occurences by regex in a string.
+     *
+     * @param input The input string.
+     * @param pattern The regex pattern.
+     *
+     * @return The number of occurences.
+     */
+    public static int countOccurencesRegex(String input, Pattern pattern) {
+        // Create a matcher
+        Matcher matcher = pattern.matcher(input);
+
+        // Count the number of occurrences
+        int count = 0;
+        while (matcher.find())
+            count++;
+
+        // Return the count
+        return count;
     }
 }
