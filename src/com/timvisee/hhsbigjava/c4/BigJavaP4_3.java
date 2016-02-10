@@ -13,6 +13,8 @@
 
 package com.timvisee.hhsbigjava.c4;
 
+import java.util.Scanner;
+
 /**
  * Main class.
  */
@@ -24,6 +26,20 @@ public class BigJavaP4_3 {
      * @param args Start arguments.
      */
     public static void main(String[] args) {
+        // Create a scanner for user input
+        Scanner in = new Scanner(System.in);
+
+        // Ask the user for an input string
+        System.out.print("Please enter some string: ");
+        String input = in.next();
+
+        // Loop through all the characters, and output the capital characters
+        System.out.print("Uppercase characters: ");
+        for(char c : input.toCharArray())
+            if(Character.isUpperCase(c))
+                System.out.print(c);
+        System.out.println("");
+
 
     }
 }
