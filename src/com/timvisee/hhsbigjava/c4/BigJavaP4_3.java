@@ -33,7 +33,7 @@ public class BigJavaP4_3 {
 
         // Ask the user for an input string
         System.out.print("Please enter some string: ");
-        String input = in.next();
+        final String input = in.next();
 
         // Loop through all the characters, and output the capital characters
         System.out.print("Uppercase characters: ");
@@ -49,7 +49,7 @@ public class BigJavaP4_3 {
             System.out.println("Second character in string: " + input.charAt(1));
 
         // Copy the string and replace all the vowels with an underscore
-        String inputVowels = input.replaceAll("[aeiou]", "\\_");
+        final String inputVowels = input.replaceAll("[aeiou]", "\\_");
         System.out.println("Without vowels: " + inputVowels);
 
         // The number of vowels in the string
@@ -58,7 +58,7 @@ public class BigJavaP4_3 {
         // Determine the position of all vowels in the string
         System.out.println("Vowel positions:");
         for(int i = 0; i < input.length(); i++)
-            // Check whether this character is a vowel
+            // Check whether this character is a vowel by comparing the original string to the vowel'd string
             if(input.charAt(i) != '_' && inputVowels.charAt(i) == '_')
                 System.out.println(" - Vowel " + input.charAt(i) + " is at position " + (i + 1));
     }
