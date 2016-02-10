@@ -56,9 +56,11 @@ public class BigJavaP4_3 {
         System.out.println("Number of vowels: " + countOccurrencesRegex(input, Pattern.compile("[aeiou]")));
 
         // Determine the position of all vowels in the string
-        for(int i = 0; i < input.length(); i++) {
-            //
-        }
+        System.out.println("Vowel positions:");
+        for(int i = 0; i < input.length(); i++)
+            // Check whether this character is a vowel
+            if(input.charAt(i) != '_' && inputVowels.charAt(i) == '_')
+                System.out.println(" - Vowel " + input.charAt(i) + " is at position " + (i + 1));
     }
 
     /**
