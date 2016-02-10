@@ -45,5 +45,8 @@ public class BigJavaP4_3 {
             System.out.println("The string doesn't have a second character.");
         else
             System.out.println("Second character in string: " + input.charAt(1));
+
+        // Copy the string and replace all the vowels with an underscore
+        System.out.println("Without vowels: " + input.replaceAll("[aeiou]", "\\_"));
     }
 }
