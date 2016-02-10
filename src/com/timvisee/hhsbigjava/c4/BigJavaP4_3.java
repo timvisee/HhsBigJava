@@ -40,6 +40,10 @@ public class BigJavaP4_3 {
                 System.out.print(c);
         System.out.println("");
 
-
+        // Make sure the string has at least two characters
+        if(input.length() < 2)
+            System.out.println("The string doesn't have a second character.");
+        else
+            System.out.println("Second character in string: " + input.charAt(1));
     }
 }
