@@ -52,10 +52,10 @@ public class BigJavaP3_34 {
         double cost = in.nextDouble();
 
         // Loop through the coupons
-        for(int i = 0; i < COUPONS.length; i++) {
+        for(double[] COUPON : COUPONS) {
             // Check whether the current price is under the minimum price of this coupon
-            if(cost < COUPONS[i][0] || COUPONS[i][0] == -1.0) {
-                printCoupon(cost, COUPONS[i][1]);
+            if(cost < COUPON[0] || COUPON[0] == -1.0) {
+                printCoupon(cost, COUPON[1]);
                 break;
             }
         }
