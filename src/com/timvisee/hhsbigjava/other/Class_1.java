@@ -33,7 +33,7 @@ public class Class_1 {
                 3,
         };
 
-        // Loop through the numbers, and only porint the numbers smaller than 5
+        // Loop through the numbers, and only print the numbers smaller than 5
         for(int num : nums)
             if(num < 5)
                 System.out.println(num);
