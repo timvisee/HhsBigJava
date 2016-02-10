@@ -26,38 +26,52 @@ public class BigJavaP4_1 {
      * @param args Start arguments.
      */
     public static void main(String[] args) {
+        // Make sure two arguments are entered
+        if(args.length != 2) {
+            System.out.println("You have entered invalid arguments!");
+            System.out.println("Required arguments: <min> <max>");
+            System.exit(0);
+        }
+
+        // Parse the minimum and maximum value
+        int min = 0;
+        int max = 0;
+        try {
+            int a = Integer.valueOf(args[0]);
+            int b = Integer.valueOf(args[1]);
+
+            // Put the two values in the proper variable
+            min = Math.min(a, b);
+            max = Math.max(a, b);
+
+        } catch(Exception ex) {
+            System.out.println("The parameters you've entered are invalid, make sure you enter integers!");
+            System.exit(0);
+        }
+
         // Define the sum variable
         double sum = 0;
 
         // Complete the sum of all even numbers from 2 to 100
         sum = 0;
-        for(int i = 2; i <= 100; i += 2)
+        for(int i = min; i <= max; i += 2)
             sum += i;
         System.out.println("A: " + (int) sum);
 
         // Complete the sum of all even numbers from 2 to 100
         sum = 0;
-        for(int i = 1; i <= 100; i++)
+        for(int i = min; i <= max; i++)
             sum += Math.sqrt((double) i);
         System.out.println("B: " + sum);
 
         // Complete the sum of all even numbers from 2 to 100
         sum = 0;
-        for(int i = 20; i <= 220; i++)
+        for(int i = min; i <= max; i++)
             sum += Math.pow(i, 2);
         System.out.println("C: " + (int) sum);
 
         // Create a scanner instance to gather input
         Scanner in = new Scanner(System.in);
-
-        // Ask the user for two inputs
-        System.out.println("Please enter two inputs");
-        int a = in.nextInt();
-        int b = in.nextInt();
-
-        // Determine the minimum and maximum number
-        int min = Math.min(a, b);
-        int max = Math.max(a, b);
 
         // Loop through all numbers
         sum = 0;
