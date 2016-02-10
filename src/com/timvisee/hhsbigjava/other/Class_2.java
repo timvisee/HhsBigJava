@@ -25,8 +25,8 @@ public class Class_2 {
         int[] stars = {3, 3, 4, 6, 1, 0, 2, 28};
 
         // Loop through the stars on each line, print them afterwards. Finish the last star with a new line
-        for(int i = 0; i < stars.length; i++)
-            for(int j = 0; j < stars[i]; j++)
-                System.out.print("* " + (j == stars[i] - 1 ? "\n" : ""));
+        for(int s : stars)
+            for(int j = 0; j < s; j++)
+                System.out.print("* " + (j == s - 1 ? "\n" : ""));
     }
 }
