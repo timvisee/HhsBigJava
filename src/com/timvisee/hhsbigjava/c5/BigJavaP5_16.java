@@ -50,6 +50,6 @@ public class BigJavaP5_16 {
             return false;
 
         // Compare the remaining part if the string is at least 3 characters long, otherwise return true
-        return str.length() < 3 || isPalindrome(str.substring(1, str.length() - 2));
+        return str.length() < 3 || isPalindrome(str.substring(1, str.length() - 1));
     }
 }
