@@ -32,7 +32,7 @@ public class BigJavaP2_27 {
         double yenBase = in.nextDouble();
 
         // Calculate the factor
-        double rateFactor = 1.00 / yenBase;
+        double rateFactor = yenBase / 1.00;
 
         // Create a list to put the dollar values in
         List<Double> prices = new ArrayList<>();
