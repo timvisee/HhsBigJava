@@ -12,6 +12,8 @@
 
 package com.timvisee.hhsbigjava.c5;
 
+import java.util.Scanner;
+
 /**
  * Main class.
  */
@@ -23,7 +25,19 @@ public class BigJavaP5_2 {
      * @param args Start arguments.
      */
     public static void main(String[] args) {
+        // Create a scanner for user input
+        Scanner in = new Scanner(System.in);
 
+        // Ask the user for three values
+        System.out.println("Please enter three values:");
+        double x = in.nextDouble();
+        double y = in.nextDouble();
+        double z = in.nextDouble();
+
+        // Return the results
+        System.out.println("All the same: " + (allTheSame(x, y, z) ? "true" : "false"));
+        System.out.println("All different: " + (allDifferent(x, y, z) ? "true" : "false"));
+        System.out.println("Sorted (smallest to largest) " + (sorted(x, y, z) ? "true" : "false"));
     }
 
     /**
