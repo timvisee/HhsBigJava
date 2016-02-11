@@ -25,4 +25,43 @@ public class BigJavaP5_3 {
     public static void main(String[] args) {
 
     }
+
+    /**
+     * Get the first digit from a number, the minus sign is omitted.
+     *
+     * @param n The number.
+     *
+     * @return The first digit as character.
+     */
+    public static char firstDigit(int n) {
+        // Absolute the number, convert it to a string and return the first digit as character
+        return String.valueOf(Math.abs(n)).charAt(0);
+    }
+
+    /**
+     * Get the last digit from a number, the minus sign is omitted.
+     *
+     * @param n The number.
+     *
+     * @return The last digit as character.
+     */
+    public static char lastDigit(int n) {
+        // Convert the value into a string
+        String s = String.valueOf(n);
+
+        // Return the last digit as character
+        return s.charAt(s.length() - 1);
+    }
+
+    /**
+     * Count the number of digits for a number, the minus is omitted.
+     *
+     * @param n The number.
+     *
+     * @return The number of digits a number has.
+     */
+    public static int digits(int n) {
+        // Absolute the value, convert it into a string and return the number of characters
+        return String.valueOf(Math.abs(n)).length();
+    }
 }
