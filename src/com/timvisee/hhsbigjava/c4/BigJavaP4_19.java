@@ -17,11 +17,24 @@ package com.timvisee.hhsbigjava.c4;
 public class BigJavaP4_19 {
 
     /**
+     * The number of positions on the X coordinate.
+     */
+    public static final int X_SIZE = 10;
+
+    /**
+     * The number of positions on the Y coordinate.
+     */
+    public static final int Y_SIZE = 10;
+
+    /**
      * Main method, called on start.
      *
      * @param args Start arguments.
      */
     public static void main(String[] args) {
-
+        // Create a for loop to loop through the positions of the matrix
+        for(int x = 1; x <= 10; x++)
+            for(int y = 1; y <= 10; y++)
+                System.out.print(String.format("%3s" , (y * x)) + (y == Y_SIZE ? "\n" : " "));
     }
 }
