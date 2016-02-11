@@ -16,4 +16,26 @@ package com.timvisee.hhsbigjava.c5;
  * Main class.
  */
 public class BigJavaP5_16 {
+
+    /**
+     * Main method, called on start.
+     *
+     * @param args Start arguments.
+     */
+    public static void main(String[] args) {
+
+    }
+
+    public static boolean isPalindrome(String str) {
+        // Compare the first and the last value
+        if(str.charAt(0) != str.charAt(str.length() - 1))
+            return false;
+
+        // Compare the remaining part if the string is at least 3 characters long
+        if(str.length() >= 3)
+            return isPalindrome(str.substring(1, str.length() - 2));
+
+        // The string is a palindrome, return true
+        return true;
+    }
 }
