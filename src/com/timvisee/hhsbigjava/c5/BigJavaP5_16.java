@@ -31,11 +31,7 @@ public class BigJavaP5_16 {
         if(str.charAt(0) != str.charAt(str.length() - 1))
             return false;
 
-        // Compare the remaining part if the string is at least 3 characters long
-        if(str.length() >= 3)
-            return isPalindrome(str.substring(1, str.length() - 2));
-
-        // The string is a palindrome, return true
-        return true;
+        // Compare the remaining part if the string is at least 3 characters long, otherwise return true
+        return str.length() < 3 || isPalindrome(str.substring(1, str.length() - 2));
     }
 }
