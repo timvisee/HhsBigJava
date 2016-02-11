@@ -26,6 +26,14 @@ public class BigJavaP5_16 {
 
     }
 
+    /**
+     * Check whether a string is a palindrome. Surrounding whitespaces are taken into consideration too.
+     * Note: This method works recursively.
+     *
+     * @param str The string to check.
+     *
+     * @return True if the string is a palindrome, false if not.
+     */
     public static boolean isPalindrome(String str) {
         // Compare the first and the last value
         if(str.charAt(0) != str.charAt(str.length() - 1))
