@@ -35,24 +35,24 @@ public class BigJavaP2_27 {
         double rateFactor = yenBase / 1.00;
 
         // Create a list to put the dollar values in
-        List<Double> prices = new ArrayList<>();
+        List<Double> values = new ArrayList<>();
 
         // Start a loop to gather prices
         System.out.println("Please enter dollar values, enter 0 when you're done:");
         while(true) {
             // Gather a value as string
-            String nextValueStr = in.nextLine();
+            String valueStr = in.nextLine();
 
             // Try to convert the value to a double, and store it in the list if it's not zero
             try {
-                double nextValue = Double.valueOf(nextValueStr);
+                double value = Double.valueOf(valueStr);
 
                 // If the value equals zero, stop the loop
-                if(nextValue == 0)
+                if(value == 0)
                     break;
 
                 // Put the value in the list
-                prices.add(nextValue);
+                values.add(value);
 
             } catch(Exception ex) {
                 System.out.println("The value you've entered is invalid! Enter an additional value or 0 to stop the input.");
@@ -60,13 +60,13 @@ public class BigJavaP2_27 {
         }
 
         // Make sure any values have been entered
-        if(prices.size() == 0) {
+        if(values.size() == 0) {
             System.out.println("You haven't entered any values.");
             System.exit(0);
         }
 
         // Loop through all the entered values, and return the converted rate
-        for(double v : prices)
+        for(double v : values)
             System.out.println("$" + v + "   ->   " + (v * rateFactor) + " yen");
     }
 }
