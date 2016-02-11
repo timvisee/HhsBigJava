@@ -29,7 +29,7 @@ public class BigJavaP5_3 {
         Scanner in = new Scanner(System.in);
 
         // Ask the user to enter a number
-        System.out.println("Please enter a number.");
+        System.out.print("Please enter a number: ");
         int value = in.nextInt();
 
         // Return the results
