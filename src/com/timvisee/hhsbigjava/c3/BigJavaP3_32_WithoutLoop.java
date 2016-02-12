@@ -20,7 +20,7 @@ import java.util.Scanner;
 /**
  * Main class.
  */
-public class BigJavaP3_32_NoLoop {
+public class BigJavaP3_32_WithoutLoop {
 
     /**
      * Pin number.
