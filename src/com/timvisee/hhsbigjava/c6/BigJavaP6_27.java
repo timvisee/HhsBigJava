@@ -16,6 +16,9 @@
 
 package com.timvisee.hhsbigjava.c6;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Main class.
  */
@@ -28,5 +31,35 @@ public class BigJavaP6_27 {
      */
     public static void main(String[] args) {
 
+    }
+
+    /**
+     * Merge two lists, one by one
+     *
+     * @param a The first list.
+     * @param b The second list.
+     *
+     * @return The new, merged list
+     */
+    public static List<Integer> merge(List<Integer> a, List<Integer> b) {
+        // Determine the size of the biggest list
+        int size = Math.max(a.size(), b.size());
+
+        // Create a new array list
+        List<Integer> merged = new ArrayList<Integer>();
+
+        // Loop through both the lists
+        for(int i = 0; i < size; i++) {
+            // Add the value of the first list to the merged list if it's available
+            if(i <= a.size() - 1)
+                merged.add(a.get(i));
+
+            // Add the value of the second list to the merged list if it's available
+            if(i <= b.size() - 1)
+                merged.add(b.get(i));
+        }
+
+        // Return the merged list
+        return merged;
     }
 }
