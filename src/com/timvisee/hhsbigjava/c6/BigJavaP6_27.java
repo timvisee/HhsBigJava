@@ -98,7 +98,7 @@ public class BigJavaP6_27 {
 
         // Loop through all the integers and append them to the string
         for(int i = 0; i < ints.size(); i++)
-            s.append(ints.get(i) + (i != ints.size() - 1 ? " " : ""));
+            s.append(ints.get(i)).append(i != ints.size() - 1 ? " " : "");
 
         // Return the string representation
         return s.toString();
