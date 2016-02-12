@@ -7,7 +7,7 @@
  * @website www.timvisee.com
  */
 
-package com.timvisee.hhsbigjava.c2;
+package com.timvisee.hhsbigjava.c4;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ import java.util.Scanner;
 /**
  * Main class.
  */
-public class BigJavaP2_27 {
+public class BigJavaP4_27 {
 
     /**
      * Main method, called on start.
