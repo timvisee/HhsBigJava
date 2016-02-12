@@ -99,4 +99,35 @@ public class BigJavaP4_2 {
         // Return the largest value
         return largest;
     }
+
+    /**
+     * Count the number of even integers in a list of integers.
+     *
+     * @param ints List of integers.
+     *
+     * @return Number of even values.
+     */
+    public static int countEven(List<Integer> ints) {
+        // Define a counter
+        int counter = 0;
+
+        // Loop through all the numbers and check whether it's even
+        for(int i : ints)
+            if(isEven(i))
+                counter++;
+
+        // Return the number of even values
+        return counter;
+    }
+
+    /**
+     * Check whether a number is even. Zero is even.
+     *
+     * @param i The number to check for.
+     *
+     * @return True if the number is even, false if not.
+     */
+    public static boolean isEven(int i) {
+        return i % 2 == 0;
+    }
 }
