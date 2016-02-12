@@ -48,6 +48,11 @@ public class BigJavaP6_27 {
 
         // Merge both lists
         List<Integer> merged = merge(a, b);
+
+        // Print the predefined lists, and the results
+        System.out.println("A: " + serializeList(a));
+        System.out.println("B: " + serializeList(b));
+        System.out.println("Merged: " + serializeList(merged));
     }
 
     /**
@@ -78,5 +83,24 @@ public class BigJavaP6_27 {
 
         // Return the merged list
         return merged;
+    }
+
+    /**
+     * Serialize a list of integers. This will convert the list into a string representation.
+     *
+     * @param ints List of integers.
+     *
+     * @return The string representation.
+     */
+    public static String serializeList(List<Integer> ints) {
+        // Create a string builder to build the string list in
+        StringBuilder s = new StringBuilder();
+
+        // Loop through all the integers and append them to the string
+        for(int i = 0; i < ints.size(); i++)
+            s.append(ints.get(i) + (i != ints.size() - 1 ? " " : ""));
+
+        // Return the string representation
+        return s.toString();
     }
 }
