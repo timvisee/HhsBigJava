@@ -58,6 +58,14 @@ public class BigJavaP4_2 {
             System.out.println("You haven't entered any integers! The application will quit.");
             System.exit(0);
         }
+
+        // Print the smallest and largest values
+        System.out.println("Smallest: " + getSmallest(ints));
+        System.out.println("Largest: " + getLargest(ints));
+
+        // Print the number of even and odd numbers
+        System.out.println("Even numbers: " + countEven(ints));
+        System.out.println("Odd numbers: " + countOdd(ints));
     }
 
     /**
