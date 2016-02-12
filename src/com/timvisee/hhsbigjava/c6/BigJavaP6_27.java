@@ -46,7 +46,7 @@ public class BigJavaP6_27 {
         int size = Math.max(a.size(), b.size());
 
         // Create a new array list
-        List<Integer> merged = new ArrayList<Integer>();
+        List<Integer> merged = new ArrayList<>();
 
         // Loop through both the lists
         for(int i = 0; i < size; i++) {
