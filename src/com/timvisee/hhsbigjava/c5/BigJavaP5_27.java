@@ -69,8 +69,8 @@ public class BigJavaP5_27 {
      */
     public static int romanToDecimal(String romanNumber) {
         // Create a variable for the decimal, and the last number
-        int decimal = 0;
-        int lastNumber = 0;
+        int dec = 0;
+        int lastNum = 0;
 
         // Uppercase the string
         romanNumber = romanNumber.toUpperCase();
@@ -90,11 +90,11 @@ public class BigJavaP5_27 {
             final int charVal = ROMAN_VALUES.get(c);
 
             // Process the value
-            decimal = decimal + charVal * (lastNumber > charVal ? -1 : 1);
-            lastNumber = charVal;
+            dec = dec + charVal * (lastNum > charVal ? -1 : 1);
+            lastNum = charVal;
         }
 
         // Return the decimal number
-        return decimal;
+        return dec;
     }
 }
