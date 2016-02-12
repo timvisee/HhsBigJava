@@ -66,6 +66,35 @@ public class BigJavaP4_2 {
         // Print the number of even and odd numbers
         System.out.println("Even numbers: " + countEven(ints));
         System.out.println("Odd numbers: " + countOdd(ints));
+
+        // Print the cumulative totals
+        System.out.print("Cumulative values: ");
+        int total = 0;
+        for(int i : ints)
+            System.out.print((total += i) + " ");
+        System.out.println("");
+
+        // Print all adjacent values
+        System.out.print("Adjacent values: ");
+        int last = ints.get(0);
+        boolean printed = false;
+        for(int i : ints) {
+            if(i == last) {
+                // Print the value if it's the second occurrence, and set the proper flags
+                if(!printed) {
+                    System.out.print(i + " ");
+                    printed = true;
+                }
+
+            } else {
+                // Set the last value
+                last = i;
+
+                // Reset the printed flag
+                printed = false;
+            }
+        }
+        System.out.println("");
     }
 
     /**
