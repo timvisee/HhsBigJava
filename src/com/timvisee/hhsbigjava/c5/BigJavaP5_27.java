@@ -22,6 +22,7 @@
 
 package com.timvisee.hhsbigjava.c5;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 /**
@@ -46,6 +47,15 @@ public class BigJavaP5_27 {
         System.out.println("Decimal value: " + romanToDecimal(roman));
     }
 
+    public static final HashMap<Character, Integer> romanValues = new HashMap<Character, Integer>(){{
+        put('M', 1000);
+        put('D', 500);
+        put('C', 100);
+        put('L', 50);
+        put('X', 10);
+        put('V', 5);
+        put('I', 1);
+    }};
 
     /**
      * Convert a roman number representation to a decimal.
@@ -67,43 +77,18 @@ public class BigJavaP5_27 {
             // Get the character
             char convertToDecimal = romanNumeral.charAt(x);
 
-            // Get the decimal value for this character
-            switch (convertToDecimal) {
-                case 'M':
-                    decimal = processDecimal(1000, lastNumber, decimal);
-                    lastNumber = 1000;
-                    break;
-
-                case 'D':
-                    decimal = processDecimal(500, lastNumber, decimal);
-                    lastNumber = 500;
-                    break;
-
-                case 'C':
-                    decimal = processDecimal(100, lastNumber, decimal);
-                    lastNumber = 100;
-                    break;
-
-                case 'L':
-                    decimal = processDecimal(50, lastNumber, decimal);
-                    lastNumber = 50;
-                    break;
-
-                case 'X':
-                    decimal = processDecimal(10, lastNumber, decimal);
-                    lastNumber = 10;
-                    break;
-
-                case 'V':
-                    decimal = processDecimal(5, lastNumber, decimal);
-                    lastNumber = 5;
-                    break;
-
-                case 'I':
-                    decimal = processDecimal(1, lastNumber, decimal);
-                    lastNumber = 1;
-                    break;
+            // Make sure the value exists in the list
+            if(!romanValues.containsKey(convertToDecimal)) {
+                System.out.println("The " + convertToDecimal + " character is illegal!");
+                System.exit(0);
             }
+
+            // Get the value for this character
+            int val = romanValues.get(convertToDecimal);
+
+            // Process the value
+            decimal = processDecimal(val, lastNumber, decimal);
+            lastNumber = val;
         }
 
         // Return the decimal number
