@@ -90,24 +90,11 @@ public class BigJavaP5_27 {
             final int charVal = ROMAN_VALUES.get(c);
 
             // Process the value
-            decimal = processDecimal(charVal, lastNumber, decimal);
+            decimal = decimal + charVal * (lastNumber > charVal ? -1 : 1);
             lastNumber = charVal;
         }
 
         // Return the decimal number
         return decimal;
-    }
-
-    /**
-     * Process a decimal number.
-     *
-     * @param decimal The decimal number.
-     * @param lastNumber The last number.
-     * @param lastDecimal  The last decimal number.
-     *
-     * @return The result.
-     */
-    public static int processDecimal(int decimal, int lastNumber, int lastDecimal) {
-        return lastDecimal + decimal * (lastNumber > decimal ? -1 : 1);
     }
 }
