@@ -12,9 +12,7 @@
  *       Add the difference value(second character) - value(first character) to total.
  *       Remove both characters.
  *
- *
  * NOTE: This challenge has been solved with a more robust method, the challenge itself is ignored.
- *
  *
  * @author Tim Visee
  * @website www.timvisee.com
@@ -63,22 +61,22 @@ public class BigJavaP5_27 {
     /**
      * Convert a roman number representation to a decimal.
      *
-     * @param romanNumber The roman number as a string.
+     * @param romanNum The roman number as a string.
      *
      * @return The decimal number
      */
-    public static int romanToDecimal(String romanNumber) {
+    public static int romanToDecimal(String romanNum) {
         // Create a variable for the decimal, and the last number
         int dec = 0;
         int lastNum = 0;
 
         // Uppercase the string
-        romanNumber = romanNumber.toUpperCase();
+        romanNum = romanNum.toUpperCase();
 
         // Loop through all the characters in the string
-        for(int i = romanNumber.length() - 1; i >= 0 ; i--) {
+        for(int i = romanNum.length() - 1; i >= 0 ; i--) {
             // Get the character
-            char c = romanNumber.charAt(i);
+            char c = romanNum.charAt(i);
 
             // Make sure the value exists in the list
             if(!ROMAN_VALUES.containsKey(c)) {
