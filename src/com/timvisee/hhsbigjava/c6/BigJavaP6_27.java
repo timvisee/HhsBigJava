@@ -31,7 +31,23 @@ public class BigJavaP6_27 {
      * @param args Start arguments.
      */
     public static void main(String[] args) {
+        // Create two lists to put the predefined values in
+        List<Integer> a = new ArrayList<Integer>(){{
+            add(1);
+            add(4);
+            add(9);
+            add(16);
+        }};
+        List<Integer> b = new ArrayList<Integer>(){{
+            add(9);
+            add(7);
+            add(4);
+            add(9);
+            add(11);
+        }};
 
+        // Merge both lists
+        List<Integer> merged = merge(a, b);
     }
 
     /**
