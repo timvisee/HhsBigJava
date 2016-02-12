@@ -108,9 +108,6 @@ public class BigJavaP5_27 {
      * @return The result.
      */
     public static int processDecimal(int decimal, int lastNumber, int lastDecimal) {
-        if (lastNumber > decimal)
-            return lastDecimal - decimal;
-        else
-            return lastDecimal + decimal;
+        return lastDecimal + decimal * (lastNumber > decimal ? -1 : 1);
     }
 }
