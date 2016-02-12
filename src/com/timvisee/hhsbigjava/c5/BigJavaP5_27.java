@@ -31,6 +31,19 @@ import java.util.Scanner;
 public class BigJavaP5_27 {
 
     /**
+     * A hashmap with the value for each roman character.
+     */
+    public static final HashMap<Character, Integer> ROMAN_VALUES = new HashMap<Character, Integer>(){{
+        put('M', 1000);
+        put('D', 500);
+        put('C', 100);
+        put('L', 50);
+        put('X', 10);
+        put('V', 5);
+        put('I', 1);
+    }};
+
+    /**
      * Main method, called on start.
      *
      * @param args Start arguments.
@@ -46,16 +59,6 @@ public class BigJavaP5_27 {
         // Convert the roman number into a decimal, and print it to the console
         System.out.println("Decimal value: " + romanToDecimal(roman));
     }
-
-    public static final HashMap<Character, Integer> romanValues = new HashMap<Character, Integer>(){{
-        put('M', 1000);
-        put('D', 500);
-        put('C', 100);
-        put('L', 50);
-        put('X', 10);
-        put('V', 5);
-        put('I', 1);
-    }};
 
     /**
      * Convert a roman number representation to a decimal.
@@ -78,13 +81,13 @@ public class BigJavaP5_27 {
             char convertToDecimal = romanNumeral.charAt(x);
 
             // Make sure the value exists in the list
-            if(!romanValues.containsKey(convertToDecimal)) {
+            if(!ROMAN_VALUES.containsKey(convertToDecimal)) {
                 System.out.println("The " + convertToDecimal + " character is illegal!");
                 System.exit(0);
             }
 
             // Get the value for this character
-            int val = romanValues.get(convertToDecimal);
+            int val = ROMAN_VALUES.get(convertToDecimal);
 
             // Process the value
             decimal = processDecimal(val, lastNumber, decimal);
