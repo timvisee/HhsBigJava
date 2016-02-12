@@ -58,7 +58,45 @@ public class BigJavaP4_2 {
             System.out.println("You haven't entered any integers! The application will quit.");
             System.exit(0);
         }
+    }
 
-        
+    /**
+     * Get the smallest value from a list of integers.
+     *
+     * @param ints List of integers.
+     *
+     * @return The smallest integer.
+     */
+    public static int getSmallest(List<Integer> ints) {
+        // Store the smallest integer
+        int smallest = ints.get(0);
+
+        // Loop through all the numbers
+        for(Integer i : ints)
+            if(smallest > i)
+                smallest = i;
+
+        // Return the smallest value
+        return smallest;
+    }
+
+    /**
+     * Get the largest value from a list of integers.
+     *
+     * @param ints List of integers.
+     *
+     * @return The smallest integer.
+     */
+    public static int getLargest(List<Integer> ints) {
+        // Store the largest integer
+        int largest = ints.get(0);
+
+        // Loop through all the numbers
+        for(Integer i : ints)
+            if(largest < i)
+                largest = i;
+
+        // Return the largest value
+        return largest;
     }
 }
