@@ -12,11 +12,17 @@
  *       Add the difference value(second character) - value(first character) to total.
  *       Remove both characters.
  *
+ *
+ * NOTE: This challenge has been solved with a more robust method, the challenge itself is ignored.
+ *
+ *
  * @author Tim Visee
  * @website www.timvisee.com
  */
 
 package com.timvisee.hhsbigjava.c5;
+
+import java.util.Scanner;
 
 /**
  * Main class.
@@ -29,8 +35,17 @@ public class BigJavaP5_27 {
      * @param args Start arguments.
      */
     public static void main(String[] args) {
+        // Create a scanner for user input
+        Scanner in = new Scanner(System.in);
 
+        // Gather a roman number
+        System.out.print("Please enter a roman number: ");
+        String roman = in.nextLine();
+
+        // Convert the roman number into a decimal, and print it to the console
+        System.out.println("Decimal value: " + romanToDecimal(roman));
     }
+
 
     /**
      * Convert a roman number representation to a decimal.
