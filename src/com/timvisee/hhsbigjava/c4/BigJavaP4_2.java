@@ -67,34 +67,9 @@ public class BigJavaP4_2 {
         System.out.println("Even numbers: " + countEven(ints));
         System.out.println("Odd numbers: " + countOdd(ints));
 
-        // Print the cumulative totals
-        System.out.print("Cumulative values: ");
-        int total = 0;
-        for(int i : ints)
-            System.out.print((total += i) + " ");
-        System.out.println("");
-
-        // Print all adjacent values
-        System.out.print("Adjacent values: ");
-        int last = ints.get(0);
-        boolean printed = false;
-        for(int i : ints) {
-            if(i == last) {
-                // Print the value if it's the second occurrence, and set the proper flags
-                if(!printed) {
-                    System.out.print(i + " ");
-                    printed = true;
-                }
-
-            } else {
-                // Set the last value
-                last = i;
-
-                // Reset the printed flag
-                printed = false;
-            }
-        }
-        System.out.println("");
+        // Print the cumulative and adjacent integers
+        printCumulative(ints);
+        printAdjacent(ints);
     }
 
     /**
@@ -166,6 +141,61 @@ public class BigJavaP4_2 {
      */
     public static int countOdd(List<Integer> ints) {
         return ints.size() - countEven(ints);
+    }
+
+    /**
+     * Print all the cumulative numbers of a list of integers.
+     *
+     * @param ints The list of integers.
+     */
+    public static void printCumulative(List<Integer> ints) {
+        // Print the cumulative totals
+        System.out.print("Cumulative values: ");
+        int total = 0;
+        for(int i : ints)
+            System.out.print((total += i) + " ");
+
+        // Append a new line to the end
+        System.out.println("");
+    }
+
+    /**
+     * Print all adjacent numbers in a list of integers.
+     *
+     * @param ints The list of integers.
+     */
+    public static void printAdjacent(List<Integer> ints) {
+        // Print all adjacent values
+        System.out.print("Adjacent values: ");
+
+        // Define a variable for the last number, and create a printed flag
+        int last = ints.get(0);
+        boolean printed = false;
+
+        // Loop through all the numbers
+        for(int i = 1; i < ints.size(); i++) {
+            // Get the current value
+            int val = ints.get(i);
+
+            // Check whether this number equals to the last one
+            if(val == last) {
+                // Print the value if it's the second occurrence, and set the proper flags
+                if(!printed) {
+                    System.out.print(val + " ");
+                    printed = true;
+                }
+
+            } else {
+                // Set the last value
+                last = val;
+
+                // Reset the printed flag
+                printed = false;
+            }
+        }
+
+        // Append a new line to the end
+        System.out.println("");
     }
 
     /**
