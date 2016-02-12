@@ -73,25 +73,25 @@ public class BigJavaP5_27 {
         int lastNumber = 0;
 
         // Uppercase the string
-        String romanNumeral = romanNumber.toUpperCase();
+        romanNumber = romanNumber.toUpperCase();
 
         // Loop through all the characters in the string
-        for(int x = romanNumeral.length() - 1; x >= 0 ; x--) {
+        for(int i = romanNumber.length() - 1; i >= 0 ; i--) {
             // Get the character
-            char convertToDecimal = romanNumeral.charAt(x);
+            char c = romanNumber.charAt(i);
 
             // Make sure the value exists in the list
-            if(!ROMAN_VALUES.containsKey(convertToDecimal)) {
-                System.out.println("The " + convertToDecimal + " character is illegal!");
+            if(!ROMAN_VALUES.containsKey(c)) {
+                System.out.println("The " + c + " character is illegal!");
                 System.exit(0);
             }
 
             // Get the value for this character
-            int val = ROMAN_VALUES.get(convertToDecimal);
+            final int charVal = ROMAN_VALUES.get(c);
 
             // Process the value
-            decimal = processDecimal(val, lastNumber, decimal);
-            lastNumber = val;
+            decimal = processDecimal(charVal, lastNumber, decimal);
+            lastNumber = charVal;
         }
 
         // Return the decimal number
