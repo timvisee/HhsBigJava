@@ -121,6 +121,17 @@ public class BigJavaP4_2 {
     }
 
     /**
+     * Count the number of odd integers in a list of integers.
+     *
+     * @param ints List of integers.
+     *
+     * @return Number of odd values.
+     */
+    public static int countOdd(List<Integer> ints) {
+        return ints.size() - countEven(ints);
+    }
+
+    /**
      * Check whether a number is even. Zero is even.
      *
      * @param i The number to check for.
