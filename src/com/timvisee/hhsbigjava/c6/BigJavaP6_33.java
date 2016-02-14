@@ -19,6 +19,8 @@
  * Then write a program that reads one hundred terrain height values and shows how the terrain gets flooded when the
  * water level increases in ten steps from the lowest point in the terrain to the highest.
  *
+ * NOTE: The map will be automatically generated, since entering 100 height values is quite expensive.
+ *
  * @author Tim Visee
  * @website www.timvisee.com
  */
