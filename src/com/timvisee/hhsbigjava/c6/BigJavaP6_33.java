@@ -33,9 +33,19 @@ package com.timvisee.hhsbigjava.c6;
 public class BigJavaP6_33 {
 
     /**
+     * The default width of the heightmap.
+     */
+    public static final int MAP_WIDTH = 10;
+
+    /**
+     * The default height of the heightmap.
+     */
+    public static final int MAP_HEIGHT = 10;
+
+    /**
      * The default heightmap.
      */
-    public static final double[][] BASE_MAP = {
+    public static final double[][] MAP_DEFAULT = {
             {1, 1, 1, 1, 0, 0, 0, 0, 1, 1},
             {1, 1, 1, 1, 1, 0, 0, 1, 1, 1},
             {1, 1, 1, 1, 0, 0, 0, 0, 1, 1},
@@ -56,7 +66,7 @@ public class BigJavaP6_33 {
     public static void main(String[] args) {
         // Print the flooded base map for testing
         // TODO: Implement proper code here!
-        floodMap(BASE_MAP, 1.0);
+        floodMap(MAP_DEFAULT, 1.0);
     }
 
     /**
