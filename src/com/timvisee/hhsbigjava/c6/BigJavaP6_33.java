@@ -77,7 +77,7 @@ public class BigJavaP6_33 {
                 double height = heights[i][j];
 
                 // Print a asterisks or a set of spaces to visualize the map
-                System.out.print(height < waterLevel ? "* " : "  ");
+                System.out.print(height >= waterLevel ? "* " : "  ");
 
                 // Print a new line if the last map entry was printed
                 if(j == heights[0].length - 1)
