@@ -45,7 +45,7 @@ public class BigJavaP6_33 {
     /**
      * The roughness of the randomly generated map.
      */
-    public static final double MAP_ROUGHNESS = 1.0f;
+    public static final double MAP_ROUGHNESS = 0.9f;
 
     /**
      * The water level the application starts on.
