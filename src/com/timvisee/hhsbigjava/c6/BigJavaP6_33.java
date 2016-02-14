@@ -62,6 +62,12 @@ public class BigJavaP6_33 {
      * @param waterLevel The water level.
      */
     public static void floodMap(double[][] heights, double waterLevel) {
+        // Make sure the map matrix is at least 1x1
+        if(heights.length == 0 || heights[0].length == 0) {
+            System.out.println("The flood-map couldn't be printed, since the map is empty!");
+            return;
+        }
+
         // Loop through the map matrix
         for(int i = 0; i < heights.length; i++) {
             for(int j = 0; j < heights[0].length; j++) {
