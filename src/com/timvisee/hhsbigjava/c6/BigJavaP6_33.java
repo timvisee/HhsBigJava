@@ -69,11 +69,8 @@ public class BigJavaP6_33 {
      * @param args Start arguments.
      */
     public static void main(String[] args) {
-        // Randomly generate a noise map, that will be used as heightmap
-        BigJavaP6_33_Noise noise = new BigJavaP6_33_Noise(null, MAP_ROUGHNESS, MAP_WIDTH, MAP_HEIGHT, true);
-
-        // Collect the map and set it as current heightmap
-        double[][] map = noise.getGrid();
+        // Generate and store a randomized heightmap
+        double[][] map = generateMap();
 
         // Loop through the various water levels
         for(double waterLevel = WATER_LEVEL_START; waterLevel < WATER_LEVEL_STOP; waterLevel += WATER_LEVEL_STEP) {
@@ -107,5 +104,18 @@ public class BigJavaP6_33 {
             for(int y = 0; y < w; y++)
                 // Print a asterisks or a set of spaces if the spot is flooded, print a new line on the last row-entry
                 System.out.print((x[y] >= waterLevel ? "* " : "  ") + (y == w - 1 ? "\n" : ""));
+    }
+
+    /**
+     * Generate a randomized heightmap.
+     *
+     * @return A heightmap.
+     */
+    public static double[][] generateMap() {
+        // Randomly generate a noise map, that will be used as heightmap
+        BigJavaP6_33_Noise noise = new BigJavaP6_33_Noise(null, MAP_ROUGHNESS, MAP_WIDTH, MAP_HEIGHT, true);
+
+        // Return the generated noise map to use as heightmap
+        return noise.getGrid();
     }
 }
