@@ -62,6 +62,11 @@ public class BigJavaP6_33 {
      * @param waterLevel The water level.
      */
     public static void floodMap(double[][] heights, double waterLevel) {
+        // Loop through the map matrix
+        for(int i = 0; i < heights.length; i++) {
+            for(int j = 0; j < heights[0].length; j++) {
 
+            }
+        }
     }
 }
