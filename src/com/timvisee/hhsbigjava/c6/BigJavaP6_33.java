@@ -43,6 +43,11 @@ public class BigJavaP6_33 {
     public static final int MAP_HEIGHT = 10;
 
     /**
+     * The roughness of the randomly generated map.
+     */
+    public static final double MAP_ROUGHNESS = 1.0f;
+
+    /**
      * The default heightmap.
      */
     public static final double[][] MAP_DEFAULT = {
@@ -64,6 +69,10 @@ public class BigJavaP6_33 {
      * @param args Start arguments.
      */
     public static void main(String[] args) {
+        // Randomly generate the map
+        BigJavaP6_33_Noise noise = new BigJavaP6_33_Noise(null, MAP_ROUGHNESS, MAP_WIDTH, MAP_HEIGHT);
+        noise.initialise();
+
         // Print the flooded base map for testing
         // TODO: Implement proper code here!
         floodMap(MAP_DEFAULT, 1.0);
