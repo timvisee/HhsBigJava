@@ -77,13 +77,10 @@ public class BigJavaP6_33 {
         // Print the flooded base map for testing
         for(double waterLevel = WATER_LEVEL_START; waterLevel < WATER_LEVEL_STOP; waterLevel += WATER_LEVEL_STEP) {
             // Print the header
-            System.out.println("Flood map for water level " + waterLevel + ":");
+            System.out.println("\nFlood map for water level " + waterLevel + ":");
 
             // Print the flood map for this water level
             floodMap(map, waterLevel);
-
-            // Print the footer
-            System.out.println("");
         }
     }
 
