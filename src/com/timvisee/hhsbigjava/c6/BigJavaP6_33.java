@@ -71,7 +71,15 @@ public class BigJavaP6_33 {
         // Loop through the map matrix
         for(int i = 0; i < heights.length; i++) {
             for(int j = 0; j < heights[0].length; j++) {
+                // Get the height of the map at this specific point
+                double height = heights[i][j];
 
+                // Print a asterisks or a set of spaces to visualize the map
+                System.out.print(height < waterLevel ? "* " : "  ");
+
+                // Print a new line if the last map entry was printed
+                if(j == heights[0].length - 1)
+                    System.out.println("");
             }
         }
     }
