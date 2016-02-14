@@ -75,13 +75,13 @@ public class BigJavaP6_33 {
         int yw = heights[0].length;
 
         // Loop through the map matrix
-        for(int i = 0; i < xw; i++) {
-            for(int j = 0; j < yw; j++) {
+        for(int x = 0; x < xw; x++) {
+            for(int y = 0; y < yw; y++) {
                 // Get the height of the map at this specific point
-                double height = heights[i][j];
+                double height = heights[x][y];
 
                 // Print a asterisks or a set of spaces to visualize the map
-                System.out.print((height >= waterLevel ? "* " : "  ") + (j == yw - 1 ? "\n" : ""));
+                System.out.print((height >= waterLevel ? "* " : "  ") + (y == yw - 1 ? "\n" : ""));
             }
         }
     }
