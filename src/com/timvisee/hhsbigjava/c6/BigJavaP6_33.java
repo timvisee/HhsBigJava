@@ -56,8 +56,20 @@ public class BigJavaP6_33 {
         // Randomly generate the map
         BigJavaP6_33_Noise noise = new BigJavaP6_33_Noise(null, MAP_ROUGHNESS, MAP_WIDTH, MAP_HEIGHT, true);
 
+        // Gather the map
+        double[][] map = noise.getGrid();
+
         // Print the flooded base map for testing
-        floodMap(noise.getGrid(), 1.0);
+        for(double waterLevel = 0.0; waterLevel < 1.0; waterLevel += 0.1) {
+            // Print the header
+            System.out.println("Flood map for water level " + waterLevel + ":");
+
+            // Print the flood map for this water level
+            floodMap(map, waterLevel);
+
+            // Print the footer
+            System.out.println("");
+        }
     }
 
     /**
