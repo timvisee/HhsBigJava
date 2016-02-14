@@ -31,6 +31,22 @@ package com.timvisee.hhsbigjava.c6;
 public class BigJavaP6_33 {
 
     /**
+     * The default heightmap.
+     */
+    public static final double[][] BASE_MAP = {
+            {1, 1, 1, 1, 0, 0, 0, 0, 1, 1},
+            {1, 1, 1, 1, 1, 0, 0, 1, 1, 1},
+            {1, 1, 1, 1, 0, 0, 0, 0, 1, 1},
+            {1, 1, 1, 0, 0, 0, 0, 1, 1, 1},
+            {1, 1, 1, 1, 0, 0, 1, 1, 1, 1},
+            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+            {1, 1, 0, 0, 1, 1, 1, 0, 0, 0},
+            {1, 0, 0, 0, 1, 1, 1, 1, 0, 1},
+            {0, 0, 0, 0, 0, 0, 0, 0, 1, 1},
+            {0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
+    };
+
+    /**
      * Main method, called on start.
      *
      * @param args Start arguments.
