@@ -13,6 +13,7 @@ import java.util.Random;
 
 /**
  * Noise class.
+ * This class can generate a noise map.
  */
 public class BigJavaP6_33_Noise {
 
@@ -41,6 +42,7 @@ public class BigJavaP6_33_Noise {
      * @param init True to initialize.
      */
     public BigJavaP6_33_Noise(Random rand, double roughness, int width, int height, boolean init) {
+        // Set some parameters
         this.roughness = roughness / width;
         grid = new double[width][height];
         this.rand = (rand == null) ? new Random() : rand;
@@ -54,16 +56,17 @@ public class BigJavaP6_33_Noise {
      * Initialise.
      */
     public void init() {
+        // Determine the map size
         int xh = grid.length - 1;
         int yh = grid[0].length - 1;
 
-        // set the corner points
+        // Set the corner points
         grid[0][0] = rand.nextDouble() - 0.5;
         grid[0][yh] = rand.nextDouble() - 0.5;
         grid[xh][0] = rand.nextDouble() - 0.5;
         grid[xh][yh] = rand.nextDouble() - 0.5;
 
-        // generate the fractal
+        // Generate the fractal
         generate(0, 0, xh, yh);
     }
 
@@ -77,7 +80,7 @@ public class BigJavaP6_33_Noise {
      * @return The roughness value.
      */
     private double roughen(double v, int l, int h) {
-        return v + roughness * (double) (rand.nextGaussian() * (h - l));
+        return v + roughness * rand.nextGaussian() * (h - l);
     }
 
     /**
