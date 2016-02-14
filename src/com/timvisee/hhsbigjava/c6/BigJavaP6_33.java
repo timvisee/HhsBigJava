@@ -75,14 +75,9 @@ public class BigJavaP6_33 {
         int yw = heights[0].length;
 
         // Loop through the map matrix
-        for(int x = 0; x < xw; x++) {
-            for(int y = 0; y < yw; y++) {
-                // Get the height of the map at this specific point
-                double height = heights[x][y];
-
-                // Print a asterisks or a set of spaces to visualize the map
-                System.out.print((height >= waterLevel ? "* " : "  ") + (y == yw - 1 ? "\n" : ""));
-            }
-        }
+        for(int x = 0; x < xw; x++)
+            for(int y = 0; y < yw; y++)
+                // Print a asterisks or a set of spaces if the spot is flooded, print a new line on the last row-entry
+                System.out.print((heights[x][y] >= waterLevel ? "* " : "  ") + (y == yw - 1 ? "\n" : ""));
     }
 }
