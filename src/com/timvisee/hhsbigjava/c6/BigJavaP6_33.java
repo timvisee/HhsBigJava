@@ -70,14 +70,13 @@ public class BigJavaP6_33 {
             return;
         }
 
-        // Determine the size of the map
-        int xw = heights.length;
-        int yw = heights[0].length;
+        // Determine the width of the map
+        int width = heights[0].length;
 
         // Loop through the map matrix
-        for(int x = 0; x < xw; x++)
-            for(int y = 0; y < yw; y++)
+        for(double[] x : heights)
+            for(int y = 0; y < width; y++)
                 // Print a asterisks or a set of spaces if the spot is flooded, print a new line on the last row-entry
-                System.out.print((heights[x][y] >= waterLevel ? "* " : "  ") + (y == yw - 1 ? "\n" : ""));
+                System.out.print((x[y] >= waterLevel ? "* " : "  ") + (y == width - 1 ? "\n" : ""));
     }
 }
