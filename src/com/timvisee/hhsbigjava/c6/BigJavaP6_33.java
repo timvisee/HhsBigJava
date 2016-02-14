@@ -64,19 +64,19 @@ public class BigJavaP6_33 {
      * @param waterLevel The water level.
      */
     public static void floodMap(double[][] heights, double waterLevel) {
-        // Make sure the map matrix is at least 1x1
+        // Make sure the map is at least 1x1 big
         if(heights.length == 0 || heights[0].length == 0) {
             System.out.println("The flood-map couldn't be printed, since the map is empty!");
             return;
         }
 
         // Determine the width of the map
-        int width = heights[0].length;
+        int w = heights[0].length;
 
         // Loop through the map matrix
         for(double[] x : heights)
-            for(int y = 0; y < width; y++)
+            for(int y = 0; y < w; y++)
                 // Print a asterisks or a set of spaces if the spot is flooded, print a new line on the last row-entry
-                System.out.print((x[y] >= waterLevel ? "* " : "  ") + (y == width - 1 ? "\n" : ""));
+                System.out.print((x[y] >= waterLevel ? "* " : "  ") + (y == w - 1 ? "\n" : ""));
     }
 }
