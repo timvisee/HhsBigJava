@@ -38,4 +38,14 @@ public class BigJavaP6_33 {
     public static void main(String[] args) {
 
     }
+
+    /**
+     * Flood a given map of heights with the specified water level. The result is printed in the console.
+     *
+     * @param heights A map of heights.
+     * @param waterLevel The water level.
+     */
+    public static void floodMap(double[][] heights, double waterLevel) {
+
+    }
 }
