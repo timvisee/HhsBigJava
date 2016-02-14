@@ -34,21 +34,26 @@ public class BigJavaP6_33_Noise {
     /**
      * Generate a noise source based upon the midpoint displacement fractal.
      *
-     * @param rand The random number generator
-     * @param roughness a roughness parameter
-     * @param width the width of the grid
-     * @param height the height of the grid
+     * @param rand The random number generator.
+     * @param roughness a roughness parameter.
+     * @param width the width of the grid.
+     * @param height the height of the grid.
+     * @param init True to initialize.
      */
-    public BigJavaP6_33_Noise(Random rand, double roughness, int width, int height) {
+    public BigJavaP6_33_Noise(Random rand, double roughness, int width, int height, boolean init) {
         this.roughness = roughness / width;
         grid = new double[width][height];
         this.rand = (rand == null) ? new Random() : rand;
+
+        // Initialize
+        if(init)
+            init();
     }
 
     /**
      * Initialise.
      */
-    public void initialise() {
+    public void init() {
         int xh = grid.length - 1;
         int yh = grid[0].length - 1;
 

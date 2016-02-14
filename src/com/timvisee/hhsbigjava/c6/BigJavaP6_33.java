@@ -70,8 +70,7 @@ public class BigJavaP6_33 {
      */
     public static void main(String[] args) {
         // Randomly generate the map
-        BigJavaP6_33_Noise noise = new BigJavaP6_33_Noise(null, MAP_ROUGHNESS, MAP_WIDTH, MAP_HEIGHT);
-        noise.initialise();
+        BigJavaP6_33_Noise noise = new BigJavaP6_33_Noise(null, MAP_ROUGHNESS, MAP_WIDTH, MAP_HEIGHT, true);
 
         // Print the flooded base map for testing
         floodMap(noise.getGrid(), 1.0);
