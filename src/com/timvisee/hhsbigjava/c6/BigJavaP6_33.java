@@ -73,12 +73,8 @@ public class BigJavaP6_33 {
         BigJavaP6_33_Noise noise = new BigJavaP6_33_Noise(null, MAP_ROUGHNESS, MAP_WIDTH, MAP_HEIGHT);
         noise.initialise();
 
-        // Update the grid
-        double[][] grid = noise.getGrid();
-
         // Print the flooded base map for testing
-        // TODO: Implement proper code here!
-        floodMap(MAP_DEFAULT, 1.0);
+        floodMap(noise.getGrid(), 1.0);
     }
 
     /**
