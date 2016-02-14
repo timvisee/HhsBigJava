@@ -19,17 +19,17 @@ public class BigJavaP6_33_Noise {
     /**
      * Source of entropy.
      */
-    private Random rand_;
+    private Random rand;
 
     /**
      * Amount of roughness.
      */
-    double roughness_;
+    double roughness;
 
     /**
      * Plasma fractal grid.
      */
-    private double[][] grid_;
+    private double[][] grid;
 
     /**
      * Generate a noise source based upon the midpoint displacement fractal.
@@ -40,23 +40,23 @@ public class BigJavaP6_33_Noise {
      * @param height the height of the grid
      */
     public BigJavaP6_33_Noise(Random rand, double roughness, int width, int height) {
-        roughness_ = roughness / width;
-        grid_ = new double[width][height];
-        rand_ = (rand == null) ? new Random() : rand;
+        this.roughness = roughness / width;
+        grid = new double[width][height];
+        this.rand = (rand == null) ? new Random() : rand;
     }
 
     /**
      * Initialise.
      */
     public void initialise() {
-        int xh = grid_.length - 1;
-        int yh = grid_[0].length - 1;
+        int xh = grid.length - 1;
+        int yh = grid[0].length - 1;
 
         // set the corner points
-        grid_[0][0] = rand_.nextDouble() - 0.5;
-        grid_[0][yh] = rand_.nextDouble() - 0.5;
-        grid_[xh][0] = rand_.nextDouble() - 0.5;
-        grid_[xh][yh] = rand_.nextDouble() - 0.5;
+        grid[0][0] = rand.nextDouble() - 0.5;
+        grid[0][yh] = rand.nextDouble() - 0.5;
+        grid[xh][0] = rand.nextDouble() - 0.5;
+        grid[xh][yh] = rand.nextDouble() - 0.5;
 
         // generate the fractal
         generate(0, 0, xh, yh);
@@ -72,7 +72,7 @@ public class BigJavaP6_33_Noise {
      * @return The roughness value.
      */
     private double roughen(double v, int l, int h) {
-        return v + roughness_ * (double) (rand_.nextGaussian() * (h - l));
+        return v + roughness * (double) (rand.nextGaussian() * (h - l));
     }
 
     /**
@@ -88,18 +88,18 @@ public class BigJavaP6_33_Noise {
         int ym = (yl + yh) / 2;
         if ((xl == xm) && (yl == ym)) return;
 
-        grid_[xm][yl] = 0.5 * (grid_[xl][yl] + grid_[xh][yl]);
-        grid_[xm][yh] = 0.5 * (grid_[xl][yh] + grid_[xh][yh]);
-        grid_[xl][ym] = 0.5 * (grid_[xl][yl] + grid_[xl][yh]);
-        grid_[xh][ym] = 0.5 * (grid_[xh][yl] + grid_[xh][yh]);
+        grid[xm][yl] = 0.5 * (grid[xl][yl] + grid[xh][yl]);
+        grid[xm][yh] = 0.5 * (grid[xl][yh] + grid[xh][yh]);
+        grid[xl][ym] = 0.5 * (grid[xl][yl] + grid[xl][yh]);
+        grid[xh][ym] = 0.5 * (grid[xh][yl] + grid[xh][yh]);
 
-        double v = roughen(0.5 * (grid_[xm][yl] + grid_[xm][yh]), xl + yl, yh
+        double v = roughen(0.5 * (grid[xm][yl] + grid[xm][yh]), xl + yl, yh
                 + xh);
-        grid_[xm][ym] = v;
-        grid_[xm][yl] = roughen(grid_[xm][yl], xl, xh);
-        grid_[xm][yh] = roughen(grid_[xm][yh], xl, xh);
-        grid_[xl][ym] = roughen(grid_[xl][ym], yl, yh);
-        grid_[xh][ym] = roughen(grid_[xh][ym], yl, yh);
+        grid[xm][ym] = v;
+        grid[xm][yl] = roughen(grid[xm][yl], xl, xh);
+        grid[xm][yh] = roughen(grid[xm][yh], xl, xh);
+        grid[xl][ym] = roughen(grid[xl][ym], yl, yh);
+        grid[xh][ym] = roughen(grid[xh][ym], yl, yh);
 
         generate(xl, yl, xm, ym);
         generate(xm, yl, xh, ym);
