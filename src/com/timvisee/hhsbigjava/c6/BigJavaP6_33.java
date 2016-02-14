@@ -48,22 +48,6 @@ public class BigJavaP6_33 {
     public static final double MAP_ROUGHNESS = 1.0f;
 
     /**
-     * The default heightmap.
-     */
-    public static final double[][] MAP_DEFAULT = {
-            {1, 1, 1, 1, 0, 0, 0, 0, 1, 1},
-            {1, 1, 1, 1, 1, 0, 0, 1, 1, 1},
-            {1, 1, 1, 1, 0, 0, 0, 0, 1, 1},
-            {1, 1, 1, 0, 0, 0, 0, 1, 1, 1},
-            {1, 1, 1, 1, 0, 0, 1, 1, 1, 1},
-            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-            {1, 1, 0, 0, 1, 1, 1, 0, 0, 0},
-            {1, 0, 0, 0, 1, 1, 1, 1, 0, 1},
-            {0, 0, 0, 0, 0, 0, 0, 0, 1, 1},
-            {0, 0, 0, 0, 0, 0, 0, 1, 1, 1},
-    };
-
-    /**
      * Main method, called on start.
      *
      * @param args Start arguments.
