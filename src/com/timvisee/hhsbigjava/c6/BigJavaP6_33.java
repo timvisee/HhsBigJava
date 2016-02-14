@@ -19,7 +19,8 @@
  * Then write a program that reads one hundred terrain height values and shows how the terrain gets flooded when the
  * water level increases in ten steps from the lowest point in the terrain to the highest.
  *
- * NOTE: The map will be automatically generated, since entering 100 height values is quite expensive.
+ * NOTE: The map will be generated automatically, since entering 100 height values is quite expensive. An additional
+ *       noise class has been created to generate a noise map that is used as heightmap.
  *
  * @author Tim Visee
  * @website www.timvisee.com
@@ -68,13 +69,13 @@ public class BigJavaP6_33 {
      * @param args Start arguments.
      */
     public static void main(String[] args) {
-        // Randomly generate the map
+        // Randomly generate a noise map, that will be used as heightmap
         BigJavaP6_33_Noise noise = new BigJavaP6_33_Noise(null, MAP_ROUGHNESS, MAP_WIDTH, MAP_HEIGHT, true);
 
-        // Gather the map
+        // Collect the map and set it as current heightmap
         double[][] map = noise.getGrid();
 
-        // Print the flooded base map for testing
+        // Loop through the various water levels
         for(double waterLevel = WATER_LEVEL_START; waterLevel < WATER_LEVEL_STOP; waterLevel += WATER_LEVEL_STEP) {
             // Print the header
             System.out.println("\nFlood map for water level " + waterLevel + ":");
@@ -85,7 +86,8 @@ public class BigJavaP6_33 {
     }
 
     /**
-     * Flood a given map of heights with the specified water level. The result is printed in the console.
+     * Flood the given heightmap with the specified water level. The spots of the heightmap that are not flooded will
+     * be printed as an asterisks, the flooded spots will be left empty.
      *
      * @param heights A map of heights.
      * @param waterLevel The water level.
