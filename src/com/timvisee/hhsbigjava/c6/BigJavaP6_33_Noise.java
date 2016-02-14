@@ -106,4 +106,13 @@ public class BigJavaP6_33_Noise {
         generate(xl, ym, xm, yh);
         generate(xm, ym, xh, yh);
     }
+
+    /**
+     * Get the grid.
+     *
+     * @return The grid.
+     */
+    public double[][] getGrid() {
+        return this.grid;
+    }
 }
