@@ -52,7 +52,9 @@ public class BigJavaP6_33 {
      * @param args Start arguments.
      */
     public static void main(String[] args) {
-
+        // Print the flooded base map for testing
+        // TODO: Implement proper code here!
+        floodMap(BASE_MAP, 1.0);
     }
 
     /**
