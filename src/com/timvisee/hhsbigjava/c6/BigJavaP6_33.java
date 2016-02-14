@@ -70,14 +70,18 @@ public class BigJavaP6_33 {
             return;
         }
 
+        // Determine the size of the map
+        int xw = heights.length;
+        int yw = heights[0].length;
+
         // Loop through the map matrix
-        for(int i = 0; i < heights.length; i++) {
-            for(int j = 0; j < heights[0].length; j++) {
+        for(int i = 0; i < xw; i++) {
+            for(int j = 0; j < yw; j++) {
                 // Get the height of the map at this specific point
                 double height = heights[i][j];
 
                 // Print a asterisks or a set of spaces to visualize the map
-                System.out.print((height >= waterLevel ? "* " : "  ") + (j == heights[0].length - 1 ? "\n" : ""));
+                System.out.print((height >= waterLevel ? "* " : "  ") + (j == yw - 1 ? "\n" : ""));
             }
         }
     }
