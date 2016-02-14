@@ -48,6 +48,21 @@ public class BigJavaP6_33 {
     public static final double MAP_ROUGHNESS = 1.0f;
 
     /**
+     * The water level the application starts on.
+     */
+    public static final double WATER_LEVEL_START = 0.0;
+
+    /**
+     * The water level the application ends on.
+     */
+    public static final double WATER_LEVEL_STOP = 1.0;
+
+    /**
+     * The step size of the water levels.
+     */
+    public static final double WATER_LEVEL_STEP = 0.1;
+
+    /**
      * Main method, called on start.
      *
      * @param args Start arguments.
@@ -60,7 +75,7 @@ public class BigJavaP6_33 {
         double[][] map = noise.getGrid();
 
         // Print the flooded base map for testing
-        for(double waterLevel = 0.0; waterLevel < 1.0; waterLevel += 0.1) {
+        for(double waterLevel = WATER_LEVEL_START; waterLevel < WATER_LEVEL_STOP; waterLevel += WATER_LEVEL_STEP) {
             // Print the header
             System.out.println("Flood map for water level " + waterLevel + ":");
 
